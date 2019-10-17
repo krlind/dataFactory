@@ -1,0 +1,52 @@
+{
+	"name": "financeDat",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "dwTest",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "FinanceKey",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "DateKey",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "OrganizationKey",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "DepartmentGroupKey",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ScenarioKey",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "AccountKey",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Amount",
+				"type": "float",
+				"precision": 15
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "FactFinance"
+		}
+	}
+}
