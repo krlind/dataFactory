@@ -1,0 +1,15 @@
+{
+	"name": "TelemetryCosmosDb",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "CosmosDb",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DocumentDbCollection",
+		"typeProperties": {
+			"collectionName": "telemetry"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

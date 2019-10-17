@@ -1,0 +1,33 @@
+{
+	"name": "AzureBlob",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"FileName": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"type": "AzureBlob",
+		"typeProperties": {
+			"format": {
+				"type": "TextFormat",
+				"columnDelimiter": ",",
+				"rowDelimiter": "",
+				"nullValue": "",
+				"treatEmptyAsNull": true,
+				"skipLineCount": 0,
+				"firstRowAsHeader": true
+			},
+			"fileName": {
+				"value": "@concat(dataset().FileName, '.csv')",
+				"type": "Expression"
+			},
+			"folderPath": "data-exp3-data"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

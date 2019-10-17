@@ -1,0 +1,33 @@
+{
+	"name": "AdlsGen2Vehicles",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ADLSGen2",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"FileName": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"type": "AzureBlobFSFile",
+		"typeProperties": {
+			"format": {
+				"type": "TextFormat",
+				"columnDelimiter": ",",
+				"rowDelimiter": "",
+				"nullValue": "",
+				"treatEmptyAsNull": true,
+				"skipLineCount": 0,
+				"firstRowAsHeader": true
+			},
+			"fileName": {
+				"value": "@concat(dataset().FileName,'.csv')",
+				"type": "Expression"
+			},
+			"folderPath": "contosoauto"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
