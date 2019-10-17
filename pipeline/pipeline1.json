@@ -120,7 +120,7 @@
 				]
 			},
 			{
-				"name": "Web1",
+				"name": "Error Message",
 				"type": "WebActivity",
 				"dependsOn": [
 					{
