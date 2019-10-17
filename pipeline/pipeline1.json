@@ -143,12 +143,12 @@
 						"referenceName": "AzureBlob",
 						"type": "DatasetReference",
 						"parameters": {
-							"FileName": "dbo.FactFinance.txt"
+							"FileName": "*"
 						}
 					},
 					"logStorageSettings": {
 						"linkedServiceName": {
-							"referenceName": "ADLSGen2",
+							"referenceName": "AzureBlobStorage",
 							"type": "LinkedServiceReference"
 						}
 					},
