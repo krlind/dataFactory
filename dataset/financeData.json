@@ -10,6 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
+				"fileName": "dbo.FactFinance.txt",
 				"folderPath": "dw",
 				"fileSystem": "dw-load-area"
 			},
@@ -18,6 +19,35 @@
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
-		"schema": []
+		"schema": [
+			{
+				"name": "FinanceKey",
+				"type": "String"
+			},
+			{
+				"name": "DateKey",
+				"type": "String"
+			},
+			{
+				"name": "OrganizationKey",
+				"type": "String"
+			},
+			{
+				"name": "DepartmentGroupKey",
+				"type": "String"
+			},
+			{
+				"name": "ScenarioKey",
+				"type": "String"
+			},
+			{
+				"name": "AccountKey",
+				"type": "String"
+			},
+			{
+				"name": "Amount",
+				"type": "String"
+			}
+		]
 	}
 }

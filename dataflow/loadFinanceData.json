@@ -5,12 +5,16 @@
 		"typeProperties": {
 			"sources": [
 				{
+					"dataset": {
+						"referenceName": "financeData",
+						"type": "DatasetReference"
+					},
 					"name": "source1"
 				}
 			],
 			"sinks": [],
 			"transformations": [],
-			"script": "\n\nsource(allowSchemaDrift: true,\n\tvalidateSchema: false) ~> source1"
+			"script": "\n\nsource(output(\n\t\tFinanceKey as string,\n\t\tDateKey as string,\n\t\tOrganizationKey as string,\n\t\tDepartmentGroupKey as string,\n\t\tScenarioKey as string,\n\t\tAccountKey as string,\n\t\tAmount as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false) ~> source1"
 		}
 	}
 }

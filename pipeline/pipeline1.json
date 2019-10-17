@@ -29,7 +29,82 @@
 							"fileExtension": ".txt"
 						}
 					},
-					"enableStaging": false
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "FinanceKey",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "FinanceKey",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "DateKey",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "DateKey",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "OrganizationKey",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "OrganizationKey",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "DepartmentGroupKey",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "DepartmentGroupKey",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "ScenarioKey",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "ScenarioKey",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "AccountKey",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "AccountKey",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Amount",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "Amount",
+									"type": "Double"
+								}
+							}
+						]
+					}
 				},
 				"inputs": [
 					{
@@ -43,6 +118,32 @@
 						"type": "DatasetReference"
 					}
 				]
+			},
+			{
+				"name": "loadFinanceData",
+				"type": "ExecuteDataFlow",
+				"dependsOn": [
+					{
+						"activity": "Copy data1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataflow": {
+						"referenceName": "loadFinanceData",
+						"type": "DataFlowReference"
+					}
+				}
 			}
 		],
 		"annotations": []
